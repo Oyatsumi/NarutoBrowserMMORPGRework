@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Se você usar este código ou replicá-lo/adaptá-lo, cite a publicação abaixo. / If you use this code or replicate/adapt it, please cite the publication below."
+title: "Naruto! Nigeru RPG (browser MMORPG engine)"
+authors:
+  - family-names: Rodrigues
+    given-names: "Érick Oliveira"
+repository-code: "https://github.com/Oyatsumi/NarutoBrowserMMORPGRework"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Massively multiplayer browser games on stateless pages and a relational database, a tutorial on their construction"
+  authors:
+    - family-names: Rodrigues
+      given-names: "Érick Oliveira"
+  year: 2026
+  journal: "arXiv preprint"
+  identifiers:
+    - type: other
+      value: "arXiv:2611.33256"
+  url: "https://arxiv.org/abs/2611.33256"

@@ -1,0 +1,22 @@
+<?php // lang/en/diarias.php :: missões diárias (funcoesdiarias.php) e avisos curtos (mochila cheia, jutsu fora da recarga).
+return array(
+    "Missões diárias" => "Daily missions",
+    "Derrote %s inimigos" => "Defeat %s enemies",
+    "Derrote %s inimigos de %s" => "Defeat %s %s enemies",
+    "Ande %s casas no mapa" => "Walk %s tiles on the map",
+    "Use %s jutsus de Taijutsu em batalha" => "Use %s Taijutsu jutsus in battle",
+    "Use %s jutsus em batalha" => "Use %s jutsus in battle",
+    "Vença 1 duelo PvP" => "Win 1 PvP duel",
+    "Raio" => "Lightning",
+    "Resgatar" => "Claim",
+    "Resgatada" => "Claimed",
+    "%s Ryou e %s de experiência" => "%s Ryou and %s experience",
+    "Missão inválida." => "Invalid mission.",
+    "Essa recompensa já foi resgatada." => "This reward was already claimed.",
+    "Essa missão ainda não foi concluída." => "This mission is not complete yet.",
+    "Missão diária concluída! Você recebeu %s Ryou e %s de experiência." => "Daily mission complete! You received %s Ryou and %s experience.",
+    "Você também recebeu: %s." => "You also received: %s.",
+    "Sua mochila está cheia: a poção ficou para trás." => "Your backpack is full: the potion was left behind.",
+    "Sua mochila está cheia (8/8)." => "Your backpack is full (8/8).",
+    "%s está pronto de novo." => "%s is ready again.",
+);

@@ -1,0 +1,7 @@
+# Arquivos grandes do Photoshop no Git LFS (rode "git lfs install" antes do primeiro commit)
+*.psd filter=lfs diff=lfs merge=lfs -text
+# Finais de linha
+*.php text eol=lf
+*.sh  text eol=lf
+*.sql text eol=lf
+*.md  text eol=lf

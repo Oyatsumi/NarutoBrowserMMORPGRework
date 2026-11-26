@@ -1,0 +1,7 @@
+# Pasta de imagens (recebe uploads do Painel do Administrador): nunca executar scripts aqui.
+<FilesMatch "\.(php|phtml|phar|php\d|pl|py|cgi|sh)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>

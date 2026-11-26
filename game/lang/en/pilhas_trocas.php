@@ -1,0 +1,67 @@
+<?php // lang/en/pilhas_trocas.php :: traduções em inglês das pilhas, itens não vendáveis, troca entre jogadores, comprador de pergaminhos distante e painéis ligados a eles.
+return array(
+    // Pilhas e "não vendável" (mochila, tooltips, loja).
+    "Pilha: %s / %s" => "Stack: %s / %s",
+    "Não vendável" => "Cannot be sold",
+    "(cada)" => "(each)",
+    "Pilhas: escolha quantas unidades vender." => "Stacks: choose how many units to sell.",
+    "Quantidade inválida: escolha de 1 a %s." => "Invalid quantity: choose from 1 to %s.",
+    "Sua mochila está cheia. Libere um espaço para trocar esse item." => "Your backpack is full. Free a slot to swap this item.",
+    "Sua mochila está cheia. Escolha um espaço para substituir." => "Your backpack is full. Choose a slot to replace.",
+    "Guardar na mochila (empilha até %s)" => "Put in backpack (stacks up to %s)",
+    "(+1 na pilha)" => "(+1 to the stack)",
+    "Itens empilhados não podem ser fundidos. Deixe só uma unidade no espaço da mochila." => "Stacked items cannot be fused. Leave a single unit in the backpack slot.",
+    "O seu <b>%s</b> não pode ser vendido em loja: ele irá para a sua mochila." => "Your <b>%s</b> cannot be sold in shops: it will go to your backpack.",
+    "O seu item atual não pode ser vendido em loja e a sua mochila está cheia. Libere um espaço primeiro." => "Your current item cannot be sold in shops and your backpack is full. Free a slot first.",
+    "Libere um espaço na mochila para receber a Vitória do Jounin." => "Free a backpack slot to receive the Jounin’s Victory.",
+
+    // Comprador de pergaminhos (vila e distante).
+    "Também vendo itens úteis para a viagem e compro quase tudo da sua mochila. Pergaminhos de jutsu, só com o eremita que compra pergaminhos, longe daqui." => "I also sell useful travel supplies and buy almost anything in your backpack. Jutsu scrolls? Only the hermit who buys scrolls, far from here.",
+    "O eremita %s, em %s, paga %s%% desse preço." => "The hermit %s, at %s, pays %s%% of this price.",
+    "O comprador de pergaminhos desta vila está fechado." => "This village’s scroll buyer is closed.",
+    "Não há nenhum comprador de pergaminhos aqui." => "There is no scroll buyer here.",
+    "Poucos chegam até aqui, %s. Pergaminhos de jutsu valem ouro para quem os estuda longe das vilas: pago %s%% do que o comprador da vila pagaria." => "Few ever make it this far, %s. Jutsu scrolls are worth gold to those who study far from the villages: I pay %s%% of what the village buyer would.",
+    "Comprador de pergaminhos: %s" => "Scroll buyer: %s",
+    "Preço: (50 + 20 × nível mínimo do jutsu) × %s%%, depois o multiplicador da loja (%s%%)." => "Price: (50 + 20 × jutsu minimum level) × %s%%, then the shop multiplier (%s%%).",
+    "Voltar ao mapa" => "Back to the map",
+    "Comprador de pergaminhos" => "Scroll buyer",
+
+    // Troca.
+    "%s oferece:" => "%s offers:",
+    "A troca expira em %s minuto(s) se não for concluída." => "The trade expires in %s minute(s) if not completed.",
+    "Aceitou" => "Accepted",
+    "Ainda não aceitou" => "Not accepted yet",
+    "Confira as duas ofertas" => "Review both offers",
+    "Depois do primeiro aceite as ofertas ficam travadas: para mudar algo, cancele a troca." => "After the first acceptance both offers are locked: to change anything, cancel the trade.",
+    "Nenhum item (só Ryou)" => "No item (Ryou only)",
+    "A troca expirou. Proponha de novo, se quiser." => "The trade expired. Propose it again if you like.",
+    "Quantidade inválida para esse item." => "Invalid quantity for this item.",
+    "A troca já foi aceita e as ofertas estão travadas. Cancele a troca para mudar a oferta." => "The trade has already been accepted and the offers are locked. Cancel the trade to change your offer.",
+
+    // Painel do administrador.
+    "O máximo da pilha deve ficar entre 2 e 999." => "The stack maximum must be between 2 and 999.",
+    "Venda:" => "Selling:",
+    "Não pode ser vendido em loja" => "Cannot be sold in shops",
+    "Lojas e compradores de pergaminhos recusam o item; ao comprar outro equipamento, ele vai para a mochila em vez de ser vendido." => "Shops and scroll buyers refuse the item; when buying other equipment, it goes to the backpack instead of being sold.",
+    "Pilha:" => "Stack:",
+    "Empilhável" => "Stackable",
+    "Empilhável (até %s)" => "Stackable (up to %s)",
+    "Unidades iguais ocupam um só espaço da mochila (a quantidade aparece no ícone)." => "Identical units share one backpack slot (the quantity shows on the icon).",
+    "Pilha dos consumíveis da loja" => "Shop consumables stack",
+    "Preço do comprador de pergaminhos distante" => "Remote scroll buyer price",
+    "Comprador de pergaminhos:" => "Scroll buyer:",
+    "Também nas vilas (preço normal)" => "Also in villages (normal price)",
+    "Só o comprador distante" => "Remote buyer only",
+    "O comprador distante paga" => "The remote buyer pays",
+    "do preço da vila (padrão 200 = o dobro). O comprador distante é o NPC com o papel \"Comprador de pergaminhos\" (NPCs do mapa)." => "of the village price (default 200 = double). The remote buyer is the NPC with the \"Scroll buyer\" role (map NPCs).",
+    "Pilha dos consumíveis da loja:" => "Shop consumables stack:",
+    "Máximo de Pergaminhos de Retorno ou Incensos Repelentes num espaço da mochila (1 = não empilha)." => "Maximum Return Scrolls or Repellent Incenses in one backpack slot (1 = no stacking).",
+    "Nenhum (conversa e missões)" => "None (talk and missions)",
+    "Comprador de pergaminhos (paga mais)" => "Scroll buyer (pays more)",
+    "Papel inválido." => "Invalid role.",
+    "Papel" => "Role",
+    "O comprador de pergaminhos abre a tela de venda ao conversar; o preço é configurado em Configuração principal." => "The scroll buyer opens the selling screen when you talk to him; the price is set in Main settings.",
+
+    // Conteúdo.
+    "Eremita Kaizō" => "Hermit Kaizō",
+);

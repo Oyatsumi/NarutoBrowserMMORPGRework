@@ -1,0 +1,140 @@
+/* cartas.css :: Cartão do monstro na luta (fight.php cartaodomonstro) e na ajuda de inimigos.
+   Cor base da moldura = elemento (.el-fogo ...); raridade = camada por cima (.r-elite/.r-raro/.r-chefe). */
+@font-face { font-family: AntonJogo; src: url(fontes/anton-latin-400-normal.woff) format("woff"); font-display: swap; }
+
+.cartam { --f1:#452202; --f2:#7a4a1e; --brilho:#c98b5a; --tex:none;
+	width: 300px; max-width: 100%; height: 124px; position: relative; border-radius: 10px; padding: 4px; box-sizing: border-box;
+	margin: 0 auto; text-align: left; font-family: tahoma, arial, sans-serif;
+	background: var(--tex), linear-gradient(135deg, var(--f2), var(--f1) 40%, var(--f2) 60%, var(--f1));
+	box-shadow: inset 0 0 0 1px var(--brilho); }
+.cartam .cin { display: flex; height: 100%; background: #fff1c7; border-radius: 7px; overflow: hidden; border: 1px solid var(--brilho); }
+/* Retrato: recorte x 6..72, y 38..137 da carta antiga 295x145, ampliado 1,15x (114/99) */
+.cartam .cret { flex: 0 0 76px; position: relative; border-right: 3px solid var(--f1); background-color: #e9d7a8; overflow: hidden; }
+/* Fundo: a mesma imagem em cover, desfocada e ampliada (o scale esconde a borda clara do blur); tudo preso no retrato. */
+.cartam .cretf, .cartam .creti { position: absolute; inset: 0; background-repeat: no-repeat; }
+.cartam .cretf { inset: -12px; background-size: auto 140%; background-position: center; filter: blur(9px) sepia(.25) contrast(1.08); } /* cópia maior e desfocada (mesma ilustração ampliada) que preenche acima/abaixo; inset negativo esconde a borda clara do blur */
+/* Frente: figura inteira (contain), por cima do fundo desfocado. */
+.cartam .creti { filter: sepia(.25) contrast(1.08); -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 14%, #000 86%, transparent 100%); -webkit-mask-size: 100% var(--alt, 100%); mask-size: 100% var(--alt, 100%); --alt: 114px; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; } /* bordas de cima/baixo da ilustração se fundem no fundo desfocado */
+.cartam .creti.crecorte { -webkit-mask-image: none; mask-image: none; }
+.cartam .creti.crecorte { background-size: 339px 167px; background-position: -7px -44px; }
+.cartam .cselo, .cartam .cnv { z-index: 1; }
+.cartam .cnv { position: absolute; left: 3px; bottom: 3px; background: var(--f1); color: #fff; font: 13px/16px AntonJogo, impact, sans-serif;
+	padding: 0 6px; border-radius: 8px; border: 1px solid var(--brilho); letter-spacing: .5px; }
+.cartam .cselo { position: absolute; left: 0; top: 4px; font: bold 9px/13px tahoma, sans-serif; letter-spacing: .5px; color: #fff;
+	padding: 0 5px 0 4px; border-radius: 0 7px 7px 0; text-shadow: 0 1px 0 #0008; }
+.cartam .cico { position: absolute; right: 6px; bottom: 100%; margin-bottom: 1px; display: flex; gap: 2px; flex-wrap: nowrap;
+	line-height: 16px; z-index: 2; filter: drop-shadow(0 1px 0 #0006); }
+.cartam .cdad { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.cartam .ccab { background: linear-gradient(var(--f2), var(--f1)); color: #fff; padding: 2px 6px 2px 8px; display: flex; align-items: center;
+	justify-content: space-between; gap: 4px; border-bottom: 1px solid var(--brilho); min-height: 26px; box-sizing: border-box; }
+.cartam .cnome { font: 17px/21px AntonJogo, impact, sans-serif; letter-spacing: .5px; text-shadow: 1px 1px 0 #0009;
+	white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.cartam .cnome.cpeq { font-size: 15px; }
+.cartam .cnome.cmin { font-size: 13px; }
+.cartam .cnome.cmic { font-size: 13.5px; line-height: 14px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; } /* nomes muito longos: duas linhas */
+.cartam .cel.csotxt { font-size: 0; } /* nome longo: só o ícone do elemento (texto no title) */
+.cartam .cel { flex: 0 0 auto; display: flex; align-items: center; gap: 3px; font: bold 10px tahoma, sans-serif; }
+.cartam .cel img { width: 16px; height: 16px; background: #fff1c7; border-radius: 50%; padding: 1px; border: 1px solid var(--brilho); }
+.cartam .chp { margin: 6px 7px 3px; position: relative; height: 14px; background: #b9a675; border: 1px solid #452202; border-radius: 7px; overflow: hidden; }
+.cartam .chp i { display: block; height: 100%; background: linear-gradient(#ef6a55, #a3261a); transition: width .4s; }
+.cartam .chp span { position: absolute; inset: 0; text-align: center; font: bold 10px/14px tahoma, sans-serif; color: #fff; text-shadow: 0 0 3px #000, 0 0 2px #000; }
+.cartam .chp span b { font-weight: bold; display: inline; }
+.cartam .cg { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; padding: 2px 7px; }
+.cartam .cg div { display: flex; align-items: center; gap: 3px; background: #e4d094; border-radius: 4px; padding: 1px 5px; font: 10px tahoma, sans-serif; color: #5a3a12; }
+.cartam .cg b { font: 15px/20px AntonJogo, impact, sans-serif; color: #2a1a0c; margin-left: auto; font-weight: normal; }
+.cartam .cim { margin: 3px 7px 0; font: 10px tahoma, sans-serif; color: #5a3a12; display: flex; gap: 3px; align-items: center; flex-wrap: wrap; line-height: 13px; }
+.cartam .chip { background: #b3261e; color: #fff; border-radius: 7px; padding: 0 6px; font-weight: bold; font-size: 9px; line-height: 13px; }
+.cartam .chip.ok { background: #8b7a55; }
+
+/* ---- Elementos: cor base + textura leve ---- */
+.cartam.el-neutro { --f1:#452202; --f2:#7a4a1e; --brilho:#c98b5a; }
+.cartam.el-fogo { --f1:#6a1a08; --f2:#d8582a; --brilho:#ffc27a;
+	--tex: radial-gradient(ellipse at 15% 100%, #ffb34788, transparent 45%), radial-gradient(ellipse at 85% 0%, #ffd27a66, transparent 40%); }
+.cartam.el-fogo .ccab { background: radial-gradient(ellipse at 20% 120%, #ff9d3c99, transparent 60%), linear-gradient(var(--f2), var(--f1)); }
+.cartam.el-agua { --f1:#0d3a5a; --f2:#3d8fc8; --brilho:#bfe6ff;
+	--tex: repeating-radial-gradient(circle at 50% 160%, transparent 0 7px, #ffffff22 7px 8px); }
+.cartam.el-agua .ccab { background: repeating-radial-gradient(circle at 70% 260%, transparent 0 9px, #ffffff18 9px 10px), linear-gradient(var(--f2), var(--f1)); }
+.cartam.el-terra { --f1:#4a2c10; --f2:#a2763a; --brilho:#e2c48a;
+	--tex: radial-gradient(circle at 20% 30%, #00000033 1px, transparent 2px), radial-gradient(circle at 70% 60%, #ffffff22 1px, transparent 2px);
+	background-size: 7px 7px, 9px 9px, auto; }
+.cartam.el-terra .ccab { background: radial-gradient(circle at 30% 40%, #00000026 1px, transparent 2px) 0 0/6px 6px, linear-gradient(var(--f2), var(--f1)); }
+.cartam.el-vento { --f1:#1f5e55; --f2:#7fd0bf; --brilho:#e2fff7;
+	--tex: repeating-linear-gradient(160deg, transparent 0 9px, #ffffff26 9px 10px, transparent 10px 18px); }
+.cartam.el-vento .ccab { background: repeating-linear-gradient(160deg, transparent 0 12px, #ffffff1c 12px 14px), linear-gradient(var(--f2), var(--f1)); }
+.cartam.el-raio { --f1:#3b1f6b; --f2:#e0b52a; --brilho:#fff3a0;
+	--tex: linear-gradient(115deg, transparent 46%, #fff8b0aa 48%, transparent 50%, transparent 66%, #c9a2ffaa 68%, transparent 70%);
+	box-shadow: inset 0 0 0 1px var(--brilho), 0 0 6px #f2d64b88; }
+.cartam.el-raio .ccab { background: linear-gradient(105deg, transparent 60%, #fff6a033 62%, transparent 64%), linear-gradient(#7a4fc2, var(--f1)); }
+
+/* ---- Raridade: camada por cima do elemento ---- */
+.cartam.r-elite { box-shadow: 0 0 0 2px #dfe5ec, 0 0 0 3px #4a4f58, inset 0 0 0 1px var(--brilho); }
+.cartam.r-elite .cselo { background: linear-gradient(#c5ccd6, #6b727c); color: #1d2228; text-shadow: 0 1px 0 #fff8; }
+.cartam.r-raro { box-shadow: 0 0 0 2px #f1cd5a, 0 0 0 3px #6b4a0c, 0 0 12px #f2c94caa, inset 0 0 0 1px var(--brilho); }
+.cartam.r-raro .cselo { background: linear-gradient(#ffe48a, #b8861c); color: #3a2604; text-shadow: 0 1px 0 #fff8; }
+.cartam.r-raro .cselo:before { content: "\2605 "; }
+.cartam.r-chefe { box-shadow: 0 0 0 2px #d4a83a, 0 0 0 4px #6a2a96, 0 0 16px #b06cffcc, inset 0 0 0 1px var(--brilho); }
+.cartam.r-chefe .cselo { background: linear-gradient(#9a55cf, #3a1050); color: #ffe08a; }
+.cartam.r-chefe .cnome:before { content: "\265B  "; color: #f0c850; }
+
+/* Celular: o cartão ocupa a largura disponível sem rolagem horizontal */
+html.modocel .cartam { width: 300px; max-width: calc(100vw - 16px); }
+
+/* Traço da raridade (elite: Couraça; raro: Vigor): selo pequeno abaixo da imunidade. */
+.cartam.comtraco { height: 140px; }
+.cartam .ctraco { margin: 3px 7px 0; font: bold 9px tahoma, sans-serif; color: #fff; background: #6b4a12; border-radius: 7px; padding: 0 6px; line-height: 13px; align-self: flex-start; display: inline-block; }
+.cartam.r-elite .ctraco { background: #5d6673; }
+.cartam.r-raro .ctraco { background: #9a6e0c; }
+
+/* Linha comum de selos (funcoesroubo.php :: cartaoselos): traço da raridade, "Rouba itens", efeito no jogador e item roubado. */
+.cartam.comselos { height: auto; min-height: 140px; }
+.cartam.comselos .cin { min-height: 130px; }
+.cartam .cselos { margin: 3px 7px 3px; display: flex; flex-wrap: wrap; gap: 2px 3px; align-items: center; min-width: 0; }
+.cartam .cselos .ctraco { margin: 0; }
+.cartam .cselo2, .selosaj .cselo2 { display: inline-flex; align-items: center; gap: 2px; max-width: 100%; box-sizing: border-box; font: bold 9px/13px tahoma, sans-serif;
+	color: #3a2306; background: #e4d094; border: 1px solid #8b5a2b; border-radius: 7px; padding: 0 5px 0 2px;
+	white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: help; }
+.cartam .cselo2 img, .selosaj .cselo2 img { width: 12px; height: 12px; flex: 0 0 12px; }
+.cartam .cselo2.sroubo, .selosaj .cselo2.sroubo { background: #f3d98a; }
+.cartam .cselo2.sefeito, .selosaj .cselo2.sefeito { background: #e6d3f0; border-color: #6a2a96; color: #3a1050; }
+.cartam .cselo2.sitem, .selosaj .cselo2.sitem { background: #b3261e; border-color: #5a0c08; color: #fff; white-space: normal; }
+.selosaj { display: flex; flex-wrap: wrap; gap: 2px 3px; margin-top: 2px; }
+
+/* Ilustração da frente: largura do retrato, centrada na altura; as bordas de cima e de baixo se desfazem no fundo desfocado. */
+.cartam .cretimg { position: absolute; left: 0; top: 50%; width: 100%; height: auto; transform: translateY(-50%); filter: sepia(.25) contrast(1.08);
+	-webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); mask-image: linear-gradient(to bottom, transparent 0, #000 16%, #000 84%, transparent 100%); }
+
+/* ---- Cartão do jogador (users.php :: cartaodojogador): duelo e PvP. Mesmo cartão do monstro, mais estreito para caber dois lado a lado. ---- */
+.cartaj { width: 236px; }
+.cartaj .cret { flex-basis: 70px; }
+.cartaj .cretf { background-size: cover; }
+.cartaj .cel { gap: 2px; }
+.cartaj .cvila img { width: 18px; height: auto; vertical-align: middle; border: 0; padding: 0; background: none; border-radius: 0; }
+.cartaj .chp { margin: 5px 6px 2px; }
+.cartam .cch { margin: 0 6px 2px; position: relative; height: 10px; background: #b9a675; border: 1px solid #452202; border-radius: 5px; overflow: hidden; }
+.cartam .cch i { display: block; height: 100%; background: linear-gradient(#5fa0dc, #0b4a86); transition: width .4s; }
+.cartam .cch span { position: absolute; inset: 0; text-align: center; font: bold 8px/10px tahoma, sans-serif; color: #fff; text-shadow: 0 0 2px #000, 0 0 2px #000; }
+.cartam .cch span b { font-weight: bold; }
+.cartaj .cg { padding: 2px 6px; gap: 3px; }
+.cartaj .cg div { padding: 1px 4px; font-size: 9px; }
+.cartaj .cg b { font-size: 14px; line-height: 18px; }
+.cartaj .cselos { margin: 2px 6px 4px; }
+.cartaj.comselos, .cartaj.comselos .cin { min-height: 0; }
+.cartam .cselo2.sesp { background: #fff1c7; cursor: default; padding-left: 5px; }
+.cartam .cselo2.stitulo { background: linear-gradient(#ffe48a, #c9961f); border-color: #6b4a0c; padding-left: 4px; }
+.cartam .cselo2.cefeitos { padding: 0 3px; gap: 1px; }
+.cartaj.cvez { box-shadow: 0 0 0 2px #ffd34d, 0 0 10px #ffc400cc, inset 0 0 0 1px var(--brilho); }
+.duelocartas { display: flex; align-items: center; justify-content: center; gap: 4px; margin: 4px 0; }
+.duelocartas .duelolado { flex: 0 1 236px; min-width: 0; }
+.duelocartas .duelovs { flex: 0 0 auto; font-size: 22px; }
+html.modocel .duelocartas { flex-direction: column; gap: 2px; }
+html.modocel .duelocartas .duelolado { flex-basis: auto; width: 300px; max-width: calc(100vw - 16px); }
+html.modocel .cartaj { width: 100%; }
+@media (max-width: 520px) { .duelocartas { flex-direction: column; } .duelocartas .duelolado { flex-basis: auto; width: 100%; max-width: 300px; } .cartaj { width: 100%; } }
+/* Selos e chips com o texto centrado na vertical (com line-height fixo o texto ficava "alto" em fontes que não são a Tahoma, como no celular). */
+.cartam .chip { display: inline-flex; align-items: center; justify-content: center; height: 14px; line-height: 1; padding: 1px 6px 0; box-sizing: border-box; }
+.cartam .cselo2, .selosaj .cselo2 { height: 16px; line-height: 1; padding-top: 2px; padding-bottom: 0; }
+.cartam .ctraco { display: inline-flex; align-items: center; height: 15px; line-height: 1; padding: 2px 6px 0; box-sizing: border-box; }
+/* Selo do item roubado: texto longo quebra em várias linhas; a altura acompanha (antes ficava em 16px e cortava) e a carta cresce junto. */
+.cartam .cselo2.sitem, .selosaj .cselo2.sitem { height: auto; line-height: 12px; padding: 2px 6px 1px 3px; align-items: flex-start; }
+.cartam .cselo2.sitem img, .selosaj .cselo2.sitem img { margin-top: 0; }
+.cartam .cselo2.sfuga, .selosaj .cselo2.sfuga { background: #e9c2a8; }

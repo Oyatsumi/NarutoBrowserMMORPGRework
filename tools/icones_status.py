@@ -1,0 +1,115 @@
+"""Ícones 12x12 dos efeitos de jutsu (images/status/*.png), desenhados à mão em pixel art (originais)."""
+from PIL import Image
+OUT = "game/images/status/"
+PAL = {'.': None, 'k': (40, 22, 8), 'r': (214, 52, 24), 'o': (250, 140, 30), 'y': (255, 222, 80), 'w': (255, 250, 220),
+       'g': (60, 160, 50), 'G': (150, 220, 90), 'p': (120, 50, 150), 'P': (190, 120, 220), 'b': (40, 100, 200), 'B': (130, 190, 250),
+       'd': (150, 20, 20), 'D': (240, 90, 80), 'e': (20, 110, 40), 'E': (110, 210, 120), 's': (200, 200, 210)}
+ICONES = {
+ "queimadura": [
+  ".....k......",
+  "....kok.....",
+  "....kok..k..",
+  "...korok.kk.",
+  "..kkoryokok.",
+  ".koryyyrok..",
+  ".korywyyrok.",
+  "kooryyyyrook",
+  "korryyyyrrok",
+  "korrryyrrrok",
+  ".korrrrrrok.",
+  "..kkkkkkkk..",
+ ],
+ "veneno": [
+  ".....kk.....",
+  ".....kGk....",
+  "....kGgk....",
+  "....kGgk....",
+  "...kGgggk...",
+  "..kGggggpk..",
+  "..kGgwwgpk..",
+  ".kGgwkkwgpk.",
+  ".kggwwwwgpk.",
+  ".kgggkkggpk.",
+  "..kgggggpk..",
+  "...kkkkkk...",
+ ],
+ "atordoado": [
+  "..k......k..",
+  ".kyk....kyk.",
+  "kyyyk..kyyyk",
+  ".kyk....kyk.",
+  "..k..kk..k..",
+  "....kyyk....",
+  "...kywwyk...",
+  "...kykkyk...",
+  "....kyk.k...",
+  ".k...kyyk.k.",
+  "kyk...kk.kyk",
+  ".k........k.",
+ ],
+ "escudo": [
+  ".kkkkkkkkkk.",
+  "kBBBBBBBBbbk",
+  "kBwwBBBBbbbk",
+  "kBwBBBBBbbbk",
+  "kBBBBBBBbbbk",
+  "kBBBBBBbbbbk",
+  ".kBBBBBbbbk.",
+  ".kBBBBbbbbk.",
+  "..kBBBbbbk..",
+  "...kBBbbk...",
+  "....kBbk....",
+  ".....kk.....",
+ ],
+ "buff": [
+  ".....kk.....",
+  "....kEEk....",
+  "...kEEEek...",
+  "..kEEEEeek..",
+  ".kEEEEEeeek.",
+  "kkkkEEeekkkk",
+  "...kEEeek...",
+  "...kEEeek...",
+  "...kEEeek...",
+  "...kEEeek...",
+  "...kEEeek...",
+  "...kkkkkk...",
+ ],
+ "debuff": [
+  "...kkkkkk...",
+  "...kDDddk...",
+  "...kDDddk...",
+  "...kDDddk...",
+  "...kDDddk...",
+  "...kDDddk...",
+  "kkkkDDddkkkk",
+  ".kDDDDdddk..",
+  "..kDDDddk...",
+  "...kDddk....",
+  "....kdk.....",
+  ".....k......",
+ ],
+ "regeneracao": [
+  "....kkkk....",
+  "....kEEk....",
+  "....kEek....",
+  ".kkkkEekkkk.",
+  ".kEEEEeeeek.",
+  ".kEeeeeeeek.",
+  ".kkkkEekkkk.",
+  "....kEek....",
+  "....kEek....",
+  "....keek....",
+  "....kkkk....",
+  "............",
+ ],
+}
+for nome, linhas in ICONES.items():
+    assert len(linhas) == 12 and all(len(l) == 12 for l in linhas), nome
+    im = Image.new("RGBA", (12, 12), (0, 0, 0, 0))
+    for y, l in enumerate(linhas):
+        for x, c in enumerate(l):
+            if PAL[c]: im.putpixel((x, y), PAL[c] + (255,))
+    im.save(OUT + nome + ".png")
+    im.resize((96, 96), Image.NEAREST).save("/tmp/claude-0/st_" + nome + ".png")
+print("ok", len(ICONES))

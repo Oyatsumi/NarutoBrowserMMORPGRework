@@ -1,0 +1,118 @@
+/* celular.css :: Modo celular. Tudo fica sob html.modocel (classe posta no <head> por lib.php scriptcelular());
+   sem a classe (computador) só valem as duas regras do botão de troca, então o layout de computador não muda.
+   Só reorganiza: mesmas imagens, cores e textos. */
+.socel { display: none; }
+html.modocel .socel { display: inline; }
+html.modocel .sopc { display: none; }
+
+html.modocel { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html.modocel, html.modocel body { overflow-x: hidden; max-width: 100%; }
+html.modocel body { margin: 0; left: 0 !important; }
+html.modocel img { max-width: 100%; height: auto; }
+html.modocel img[width][height] { height: auto; }
+
+/* Barra do topo com o botão "Versão computador". */
+#celbarra { display: none; }
+html.modocel #celbarra { display: block; text-align: right; padding: 4px 8px; background: #452202; }
+html.modocel #celbarra a { color: #fff; font: bold 13px tahoma, arial, sans-serif; display: inline-block; padding: 6px 4px; }
+
+/* Moldura externa (990px) e colunas: viram blocos empilhados em largura total. */
+html.modocel body.celprimary > div > center > table { width: 100% !important; background: none !important; }
+html.modocel body.celprimary > div > center > table > tbody > tr > td { padding: 0; display: block; }
+html.modocel table.celcolunas, html.modocel table.celcolunas > tbody, html.modocel table.celcolunas > tbody > tr { display: block; width: 100%; }
+html.modocel table.celcolunas > tbody > tr { display: flex; flex-direction: column; }
+html.modocel td.celesq, html.modocel td.celmeio, html.modocel td.celdir { display: block; width: auto !important; padding: 0; }
+html.modocel td.celesq { order: 2; } /* o conteúdo vem logo abaixo da sua faixa "Notícias" (no banner), sem ficar separado dela */
+html.modocel td.celmeio { order: 1; }
+html.modocel td.celdir { order: 3; }
+
+/* Colunas laterais: os painéis de 204px (mesmas imagens) lado a lado quando cabem, centralizados. */
+html.modocel td.celesq > center, html.modocel td.celdir > center { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 0 6px; padding-top: 30px; }
+html.modocel td.celesq > center > br, html.modocel td.celdir > center > br { display: none; }
+html.modocel td.celfechado > center { display: none; }
+html.modocel .celcab { cursor: pointer; font-weight: bold; font-size: 14px; padding: 10px 12px; margin: 0; -webkit-tap-highlight-color: transparent; }
+html.modocel td.celdir .celcab { margin-top: 6px; }
+
+/* Moldura do meio: largura total, mesmas imagens esticadas na largura. */
+html.modocel table.celmoldura { width: 100% !important; }
+html.modocel table.celmoldura > tbody > tr > td { padding: 0; }
+html.modocel td.celtopo { height: auto !important; background: url(layoutnovo/titulo/cima.jpg) no-repeat center top; }
+html.modocel .celtopomenu { width: 551px; height: 214px; margin: 0 auto; zoom: var(--celz, 1); }
+html.modocel td.celtopo { height: calc(214px * var(--celz, 1)) !important; background-size: calc(758px * var(--celz, 1)) auto; }
+html.modocel table.celmoldura tr[background], html.modocel table.celmoldura td[background] { background-size: 100% auto; }
+html.modocel table.celmoldura td[background] > table { width: 100%; }
+html.modocel .conteudomeio { width: 100%; min-width: 0; max-width: 100%; padding: 0 10px; top: -4px !important; overflow-wrap: break-word; word-wrap: break-word; }
+html.modocel .conteudomeio table { max-width: 100%; }
+html.modocel .conteudomeio select { max-width: 100%; }
+html.modocel .conteudomeio input[type=text], html.modocel .conteudomeio input[type=password], html.modocel .conteudomeio input[type=email], html.modocel .conteudomeio textarea { max-width: 100%; }
+
+/* Botões tocáveis (mesmo estilo, só mais altos). */
+html.modocel input[type=submit], html.modocel input[type=button], html.modocel input[type=reset], html.modocel button { min-height: 34px; padding: 4px 10px; font-size: 14px; }
+/* Botões .btnjogo (templates/primary.php): altura de toque, texto que quebra em vez de cortar, sem passar da tela. */
+html.modocel .btnjogo, html.modocel button.btnjogo, html.modocel input.btnjogo, html.modocel a.btnjogo, html.modocel .buttons button.btnjogo { min-height: 36px; padding: 5px 12px; font-size: 14px; line-height: 18px; max-width: 100%; white-space: normal; margin: 3px; }
+html.modocel .buttons { max-width: 100%; }
+html.modocel input[type=text], html.modocel input[type=password], html.modocel input[type=email], html.modocel input[type=number], html.modocel input:not([type]), html.modocel select { min-height: 30px; font-size: 16px; }
+/* Linha do conteúdo (célula de 2px + conteúdo + célula vazia): só o conteúdo, em bloco. */
+html.modocel table.celmoldura td[background] > table, html.modocel table.celmoldura td[background] > table > tbody,
+html.modocel table.celmoldura td[background] > table > tbody > tr, html.modocel table.celmoldura td[background] > table > tbody > tr > td { display: block; width: auto; padding: 0; }
+html.modocel table.celmoldura td[background] > table > tbody > tr > td:empty { display: none; }
+html.modocel table.celmoldura, html.modocel table.celmoldura > tbody, html.modocel table.celmoldura > tbody > tr, html.modocel table.celmoldura > tbody > tr > td { display: block; }
+html.modocel table.celmoldura > tbody > tr[background*="fim.jpg"] > td, html.modocel table.celmoldura td[background*="fim.jpg"] { height: 12px; } /* só a faixa do fim da moldura (antes: "última linha", que em algumas páginas era o conteúdo) */
+/* A moldura nunca passa da tela: largura fixa da tabela externa e campos de texto que encolhem dentro das tabelas. */
+html.modocel body.celprimary > div > center > table { table-layout: fixed; }
+html.modocel .conteudomeio td > input[type=text]:only-of-type, html.modocel .conteudomeio td > input[type=password]:only-of-type, html.modocel .conteudomeio td > input[type=email]:only-of-type, html.modocel .conteudomeio td > textarea { width: 100%; min-width: 0; box-sizing: border-box; }
+html.modocel .conteudomeio input[size] { max-width: 100%; min-width: 0; }
+html.modocel .conteudomeio fieldset { min-width: 0; margin-left: 0; margin-right: 0; }
+/* Cabeçalho movido pelo js/celular.js para o topo (banner e menus, mesma imagem, em escala). */
+html.modocel table.celmoldura > tbody > tr > td.celtopo { display: none !important; }
+html.modocel #celtopo { background: url(layoutnovo/titulo/cima.jpg) no-repeat center top; background-size: calc(758px * var(--celz, 1)) auto; height: calc(214px * var(--celz, 1)); overflow: hidden; }
+/* Coluna da esquerda: painéis empilhados (navegação primeiro), sem nada cortado nas laterais. */
+html.modocel td.celesq > center { flex-wrap: wrap; justify-content: center; }
+html.modocel td.celesq > center > div { flex: 0 0 auto; }
+html.modocel td.celvazio { display: none !important; }
+/* Botão ▲/▼ de cada painel: recolhe até o título (mesmas cores da faixa .cxb-cab). */
+html.modocel .celpainel { position: relative; }
+html.modocel .celpbtn { position: absolute; top: 4px; right: 4px; z-index: 5; width: 26px; height: 26px; line-height: 24px; text-align: center; background: #452202; color: #fff; border: 1px solid #fff1c7; border-radius: 3px; font-size: 13px; text-decoration: none; }
+html.modocel .celpfechado { max-height: 46px; overflow: hidden; }
+html.modocel td.celesq .celpbtn { right: auto; left: 4px; } /* títulos da esquerda são alinhados à direita */
+
+/* Troca de versão: só para quem está num celular (o computador não vê o link). */
+html:not(.modocel):not(.celcapaz) .botaomodocel { display: none !important; }
+/* Conteúdo do meio não encosta/sobrepõe a faixa "Notícias" (no PC ele sobe 10px; no celular não). */
+html.modocel .conteudomeio { top: 0 !important; padding-top: 6px; }
+/* Caixinha de detalhes (explicdrop) no celular: fixa e centralizada embaixo da tela, nunca fica "presa" no meio do painel. */
+html.modocel #explicmenu:not(:empty) { position: fixed !important; left: 50% !important; top: auto !important; bottom: 60px; transform: translateX(-50%); z-index: 2147483000 !important; } /* acima de tudo, inclusive da faixa de convidado (9999) e do aviso (10000) */
+html.modocel #explicmenu > div { width: 260px !important; max-width: calc(100vw - 16px); }
+/* A moldura da caixinha é feita de imagens com 174px de largura: no celular a caixa é mais larga, então as imagens esticam junto (senão a borda direita "quebra"). */
+html.modocel #explicmenu > div div { background-size: 100% 100%; }
+html.modocel #explicmenu > div > div[style*="fundotabela"] { background-size: 100% auto; }
+/* Campo "Procurar jogador" do menu esquerdo: cabe na coluna (antes estourava para a direita). */
+html.modocel #procurarjog form { margin: 4px 0; }
+html.modocel #procurarjog input[type=text] { width: 90%; max-width: 300px; min-width: 0; box-sizing: border-box; padding: 4px 6px; border: 2px solid #452202; background: #fff8e1; }
+html.modocel #procurarjog input[type=submit] { display: none; }
+/* Setas pequenas de andar abaixo do personagem: um pouco maiores no celular para o dedo. */
+html.modocel form.setasmini { grid-template-columns: repeat(3, 36px) !important; grid-template-rows: repeat(2, 36px) !important; gap: 3px !important; }
+html.modocel form.setasmini button { width: 36px; height: 36px; min-height: 0; padding: 0; }
+/* Ícones à esquerda dos nomes do equipamento (icon_weapon/armor/shield e orb): a célula ao lado tem width=100% e,
+   com o max-width:100% das imagens no celular, eles eram espremidos até sumir. */
+html.modocel img[src*="images/icon_"], html.modocel img[src$="images/orb.gif"] { max-width: none; flex: none; }
+html.modocel td:has(> img[src*="images/icon_"]), html.modocel td:has(> img[src$="images/orb.gif"]) { width: 1%; white-space: nowrap; }
+/* Loja de armas/coletes/bandanas (towns.php :: buy): no celular a linha quebra em duas (ícone + nome; preço + Comprar),
+   senão o preço ficava espremido numa coluna e o botão saía da tela. */
+html.modocel table.lojaitens { width: 100% !important; }
+html.modocel table.lojaitens tr.lojalinha { display: flex; flex-wrap: wrap; align-items: center; }
+html.modocel table.lojaitens tr.lojalinha > td:nth-child(2) { flex: 1 1 calc(100% - 64px); min-width: 0; }
+html.modocel table.lojaitens tr.lojalinha > td:nth-child(3) { flex: 1 1 auto; white-space: nowrap; padding-left: 46px; box-sizing: border-box; }
+html.modocel table.lojaitens tr.lojalinha > td:first-child { flex: 0 0 auto; }
+html.modocel table.lojaitens tr.lojalinha > td:nth-child(4) { flex: 0 0 auto; }
+/* Título (legend) dos formulários: no celular o texto quebra em duas linhas e, sendo "absolute" com margem negativa,
+   cobria o primeiro parágrafo. Aqui ele fica no fluxo, acima do conteúdo. */
+html.modocel fieldset > legend { position: static; margin: -8px 0 6px; font-size: 1.05em; max-width: 100%; box-sizing: border-box; }
+/* Formulários de conta (#formback): campos no máximo na largura da coluna (o size="30" passava da moldura no celular). */
+html.modocel #formback { margin-left: 4px; margin-right: 4px; }
+html.modocel #formback input[type=text], html.modocel #formback input[type=password], html.modocel #formback input[type=email], html.modocel #formback select { width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box; }
+html.modocel #formback table { table-layout: fixed; width: 100%; }
+/* Até o js/celular.js montar o layout de celular a página fica invisível (classe posta no <head> por lib.php);
+   se o JS falhar ela aparece sozinha após 2 s. Evita a tela aparecer grande e depois mudar de tamanho. */
+html.modocel.celmontando body { visibility: hidden; animation: celrevela 0s 2s forwards; }
+@keyframes celrevela { to { visibility: visible; } }

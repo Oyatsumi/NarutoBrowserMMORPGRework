@@ -1,0 +1,2 @@
+# Os templates só são incluídos pelo PHP; nunca acessados pelo navegador.
+Require all denied

@@ -1,0 +1,8 @@
+/config.php
+# Configuração real do servidor (o repositório traz só o modelo)
+/game/config.local.php
+*.log
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc
