@@ -10,6 +10,8 @@
 > BibTeX and the [`CITATION.cff`](CITATION.cff) file are in the [How to cite](#how-to-cite) section.
 
 > **❤️ Support the project:** [**donate via Stripe**](https://donate.stripe.com/7sY4gz51905J1nRd8egQE00) — any amount helps keep the game and the code going.
+
+> **🎮 Play it online:** option 1: [naruto.x10.mx](http://naruto.x10.mx) (recommended) · option 2: [naruto.gamer.free](http://naruto.gamer.free) — ⚠️ **unreliable hosting**: it may be slow, offline or show ads; prefer option 1
 >
 > [![Donate via Stripe](https://img.shields.io/badge/Donate-Stripe-635BFF?logo=stripe&logoColor=white&style=for-the-badge)](https://donate.stripe.com/7sY4gz51905J1nRd8egQE00)
 
