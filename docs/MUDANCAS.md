@@ -363,3 +363,15 @@ itens fracos e os que os jogadores já tinham continuam infinitos. Aviso com ≤
 *Reparar equipamentos* nas lojas (`control.reparo_pct`, padrão 30% do valor por um reparo completo, atômico) e chave
 `control.durabilidade_ativa`. Detalhes em [DURABILIDADE.md](DURABILIDADE.md); migração `tools/durabilidade.sql`
 (gerada por `tools/durabilidade.py`); teste `tests/durabilidade_teste.py`.
+
+## PvP com perda de níveis, banco maior, instaladores e GameMaster (nov/2026)
+
+- **Perda de níveis no PvP**: ao morrer com caveira vermelha ou ao atingir o limite de mortes injustas, o jogador
+  perde 5 níveis na hora antes do banimento; cada morte com caveira tira de 1 a 5 níveis aleatórios. Tudo ajustável
+  no Painel do Administrador (`pvpbanirniveis`, `pvpvermelhaperdamin`, `pvpvermelhaperdamax`). Veja [PVP.md](PVP.md).
+- **Banco de itens** expansível de 30 para 40 e 50 espaços (contas antigas continuam com 30).
+- **Dois instaladores**: `install/instalar.php` (hospedagem, pelo navegador) e `install/install.sh` (VM com SSH),
+  além de `install/backup.sh` para backups periódicos.
+- **Painel do GameMaster** com novas ferramentas (o GM nunca vê nem troca a senha de outro jogador) e auditoria.
+- Novos itens e variantes (IDs 506–522); aviso de drop pendente movido para o menu da mochila.
+- README com citação obrigatória do artigo (arXiv:2611.33256), `CITATION.cff`, doação pelo Stripe e links de teste.

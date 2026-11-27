@@ -28,7 +28,7 @@ panel and an automatic installer.
 
 - **A 601 x 601 tile map** with villages, NPCs, trees and other players on the mini map; difficulty
   rises as you move away from the center (1 enemy level every 5 tiles).
-- **166 enemies** with drawn cards, 5 elements (Water > Fire > Wind > Lightning > Earth > Water),
+- **295 enemies** with drawn cards, 5 elements (Water > Fire > Wind > Lightning > Earth > Water),
   immunities, healing/damage/sleep/attack/defense jutsus and drops.
 - **10 villages** with shops, inn, maps, Ryou and item bank, missions, graduation, alchemy,
   Senjutsu (Mount Myoboku) and Search Jutsu (Sand Village).
@@ -36,11 +36,15 @@ panel and an automatic installer.
   (Student → Genin → Chuunin → Jounin).
 - Equipment with **durability**, an 8-slot backpack, drops with attributes, point distribution
   (agility, luck, intelligence, precision, determination).
+- In-game **specializations** (permanent once chosen), **Doujutsu**, **alchemy** with 58 recipes, 104 jutsus,
+  **weekly bosses**, duel seasons, clans and **12 long trainings**.
+- **PvP with red skull**: unjustified kills are punished with level loss and a ban (adjustable in the panel).
+- **Guest mode** (no sign-up, session only) and an **item bank** expandable from 30 to 40 and 50 slots.
 - **Multiplayer**: item trades confirmed by both sides, Ryou donations, **turn-based PvP duels**,
   global chat, per-coordinate map chat, an internal forum and private messages.
 - **Administrator Panel**: game settings, news, message to everyone, players (search, editing,
   banning, unlocking), moderation, maintenance, and CRUD for enemies (with card upload), items, drops,
-  jutsus, villages (with images) and levels.
+  jutsus, villages (with images) and levels; a separate **GameMaster Panel** (no access to passwords) and an audit log.
 - **Two languages**: Portuguese and English. Players switch in the footer, on the login page or in the admin
   top bar; the default language is set in the Administrator Panel (see [Languages](docs/en/ARCHITECTURE.md#languages-i18n)).
 
@@ -104,6 +108,13 @@ Details, manual installation and nginx: [INSTALL.md](docs/en/INSTALL.md).
 - [Testing](docs/en/TESTING.md)
 - [Long trainings (Training Panel)](docs/en/TRAININGS.md)
 - [Changing the home village (transfer missions, in Portuguese)](docs/TROCA_DE_VILA.md)
+- [PvP, red skull and level loss](docs/en/PVP.md)
+- [Specializations](docs/en/SPECIALIZATIONS.md)
+- [Alchemy](docs/en/ALCHEMY.md)
+- [Doujutsu (in Portuguese)](docs/DOUJUTSU.md)
+- [Durability and repair (in Portuguese)](docs/DURABILIDADE.md)
+- [Special points and jutsus (in Portuguese)](docs/PONTOS_E_JUTSUS.md)
+- [SQL optimization (in Portuguese)](docs/OTIMIZACAO_SQL.md)
 - [What changed in versions 5.0 and 4.0](docs/en/CHANGES.md)
 - [Translating the game (contributor guide)](docs/en/TRANSLATING.md)
 

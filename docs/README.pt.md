@@ -27,7 +27,7 @@ completo e instalador automático.
 
 - **Mapa de 601 x 601 casas** com vilas, NPCs, árvores e outros jogadores no mini mapa; a dificuldade
   cresce conforme você se afasta do centro (1 nível de inimigo a cada 5 casas).
-- **166 inimigos** com cartas desenhadas, 5 elementos (Água > Fogo > Vento > Relâmpago > Terra > Água),
+- **295 inimigos** com cartas desenhadas, 5 elementos (Água > Fogo > Vento > Relâmpago > Terra > Água),
   imunidades, jutsus de cura/dano/sono/ataque/defesa e drops.
 - **10 vilas** com lojas, pousada, mapas, banco de Ryou e de itens, missões, graduação, alquimia,
   Senjutsu (Montanha Myoboku) e Jutsu de Busca (Vila da Areia).
@@ -35,11 +35,15 @@ completo e instalador automático.
   (Estudante → Genin → Chuunin → Jounin).
 - Equipamentos com **durabilidade**, mochila de 8 espaços, drops com atributos, distribuição de pontos
   (agilidade, sorte, inteligência, precisão, determinação).
+- **Especializações** escolhidas no jogo (definitivas), **Doujutsu**, **alquimia** com 58 receitas, 104 jutsus,
+  **chefes semanais**, temporadas de duelo, clãs e **12 treinos longos**.
+- **PvP com caveira vermelha**: mortes injustas punidas com perda de níveis e banimento (ajustável no painel).
+- **Modo convidado** (sem cadastro, só na sessão) e **banco de itens** expansível de 30 para 40 e 50 espaços.
 - **Multijogador**: trocas de itens com confirmação dos dois lados, doação de Ryou, **duelos PvP por turnos**,
   chat global, chat de cada coordenada do mapa, fórum interno e mensagens privadas.
 - **Painel do Administrador**: configurações do jogo, notícias, mensagem para todos, jogadores (busca, edição,
   banimento, destravar), moderação, manutenção, e CRUD de inimigos (com upload da carta), itens, drops,
-  jutsus, vilas (com imagens) e níveis.
+  jutsus, vilas (com imagens) e níveis; **Painel do GameMaster** separado (sem acesso a senhas) e registro de auditoria.
 - **Dois idiomas**: português e inglês. O jogador troca no rodapé, na tela de login ou no topo do painel;
   o idioma padrão é escolhido no Painel do Administrador (veja [Idiomas](ARQUITETURA.md#idiomas-i18n)).
 
@@ -106,6 +110,13 @@ Detalhes, instalação manual e nginx: [docs/INSTALACAO.md](INSTALACAO.md).
 - [Treinos longos do Painel de Treinos](TREINOS.md)
 - [Troca de vila natal (missões de transferência)](TROCA_DE_VILA.md)
 - [Cadastro sem vila, troca de dificuldade e histórico maior](TROCA_DE_DIFICULDADE.md)
+- [PvP, caveira vermelha e perda de níveis](PVP.md)
+- [Especializações](ESPECIALIZACOES.md)
+- [Alquimia](ALQUIMIA.md)
+- [Doujutsu](DOUJUTSU.md)
+- [Durabilidade e reparo](DURABILIDADE.md)
+- [Pontos e jutsus especiais](PONTOS_E_JUTSUS.md)
+- [Otimização do SQL](OTIMIZACAO_SQL.md)
 - [O que mudou nas versões 5.0 e 4.0](MUDANCAS.md)
 - [Como traduzir o jogo (guia para colaboradores)](TRADUCAO.md)
 - [English documentation](../README.md)
